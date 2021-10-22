@@ -1,0 +1,22 @@
+{
+  "ts-node": {
+    // No need to check types again after running 'yarn build'
+    "transpileOnly": true
+  },
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "lib": ["ES2021", "dom"],
+    "module": "commonjs",
+    "target": "ES2021",
+    "declaration": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "lib"
+  },
+  "include": ["./scripts", "./test", "./typechain"],
+  "files": ["./hardhat.config.ts"],
+  "exclude": ["lib", "types", "node_modules"],
+}

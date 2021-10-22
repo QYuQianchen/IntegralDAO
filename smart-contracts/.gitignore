@@ -1,0 +1,27 @@
+# Exclude node.js module directory
+node_modules/
+
+# Exclude secrets
+.env
+
+# Coverage directory used by tools like istanbul
+coverage*
+.coverage*
+coverage.json
+coverageEnv
+
+# distribution files
+lib
+
+# Hardhat
+hardhat
+deployments/**/solcInputs
+deployments/default/localhost
+
+# typechain
+types
+
+#Hardhat files
+cache
+artifacts
+
