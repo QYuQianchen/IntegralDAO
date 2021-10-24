@@ -3,7 +3,7 @@
 <!-- INTRODUCTION -->
 <p align="center">
   <a href="https://github.com/QYuQianchen/IntegralDAO" target="_blank" rel="noopener noreferrer">
-    <img width="100" src="https://i.imgur.com/E3qAso7.png" alt="IntegralDAO Logo">
+    <img width="300" src="https://i.imgur.com/E3qAso7.png" alt="IntegralDAO Logo">
   </a>
   
   <!-- Title Placeholder -->
