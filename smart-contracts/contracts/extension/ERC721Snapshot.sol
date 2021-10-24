@@ -12,11 +12,6 @@ import "../interface/IIntegral.sol";
 import "../library/BalanceSnapshot.sol";
 
 abstract contract ERC721Snapshot is IIntegral, BalanceSnapshot, ERC721 {
-    // using BalanceSnapshot for BalanceSnapshot.Snapshot;
-
-    // /// @notice A record of ERC721 for each account, by index
-    // mapping (address => BalanceSnapshot.Snapshot[]) public snapshots;
-
     /**
      * @dev Queries the balance of `account` at a specific `blockNumber`
      * @param account The address from which the balance will be retrieved

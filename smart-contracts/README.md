@@ -19,7 +19,7 @@ deploy to Rinkeby
 yarn deploy:demo
 ```
 Then you should be able to see some results like:
-```json
+```log
 Dao deployed to:  {
   governorExpectedAddress: '0xd66Feb136D2e546a1684F9D5756A496903888A55',
   governor: '0xd66Feb136D2e546a1684F9D5756A496903888A55',
