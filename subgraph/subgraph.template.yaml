@@ -1,0 +1,27 @@
+specVersion: 0.0.2
+description: Integral DAO governance demo with HOPR token
+repository: https://github.com/QYuQianchen/IntegralDAO
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: HoprToken
+    network: {{network}}
+    source:
+      abi: HoprToken
+      address: "{{tokenAddress}}"
+      startBlock: {{startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Account
+        - Snapshot
+      abis:
+        - name: HoprToken
+          file: ./abis/HoprToken.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts

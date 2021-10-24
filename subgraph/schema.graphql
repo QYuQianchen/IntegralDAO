@@ -1,0 +1,27 @@
+type Account @entity {
+  "Account's address"
+  id: ID!
+  "Snapshot history"
+  snapshots: [Snapshot!]! @derivedFrom(field: "account")
+  "Number of snapshots"
+  snapshotsCount: BigInt!
+  "Block number of the last snapshot"
+  lastSnapshotAt: BigInt!
+  "Account's token balance"
+  balance: BigDecimal!
+  "Integral since the first snapshot"
+  integral: BigDecimal!
+}
+
+type Snapshot @entity {
+  "tx hash - tx index"
+  id: ID!
+  "Account that the snapshot belongs to"
+  account: Account!
+  "Block number of the update"
+  updatedAtBlock: BigInt!
+  "Updated balance"
+  updatedBalance: BigDecimal!
+  "Increment in integral weight since the last snapshot"
+  integralIncrement: BigDecimal!
+}

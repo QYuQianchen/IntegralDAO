@@ -1,0 +1,36 @@
+{
+  "name": "IntegralDAO-governance",
+  "version": "1.0.0",
+  "description": "Demo on the integral dao protocol with an existing governance project (HOPR)",
+  "main": "index.js",
+  "author": "QYuQianchen",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graph codegen",
+    "pre-build": "ts-node src/fetchAddress.ts",
+    "build": "graph build",
+    "prepare-local": "mustache config/local.json subgraph.template.yaml > subgraph.yaml",
+    "prepare-xdai": "mustache config/xdai.json subgraph.template.yaml > subgraph.yaml",
+    "prepare-goerli": "mustache config/goerli.json subgraph.template.yaml > subgraph.yaml",
+    "prepare-polygon": "mustache config/matic.json subgraph.template.yaml > subgraph.yaml",
+    "prepare-mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
+    "deploy": "graph deploy --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ qyuqianchen/integral-dao-protocol-demo",
+    "create-local": "graph create --node http://localhost:8020/ qyuqianchen/integral-dao-protocol-demo",
+    "remove-local": "graph remove --node http://localhost:8020/ qyuqianchen/integral-dao-protocol-demo",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 qyuqianchen/integral-dao-protocol-demo",
+    "deploy-xdai": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs qyuqianchen/integral-dao-protocol-demo --access-token $ACCESS_TOKEN",
+    "deploy-goerli": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs qyuqianchen/integral-dao-protocol-demo --access-token $ACCESS_TOKEN",
+    "deploy-mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs qyuqianchen/integral-dao-protocol-demo --access-token $ACCESS_TOKEN"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-ts": "^0.20.0",
+    "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "@hoprnet/hopr-ethereum": "latest",
+    "@types/node": "^16.10.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}
